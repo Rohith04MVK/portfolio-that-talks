@@ -143,7 +143,7 @@ st.markdown(
 <style>
 /* General Page Styling /
 .stApp {
-background: linear-gradient(to bottom right, #f0f2f6, #fafafa); / Lighter background /
+background: linear-gradient(to bottom right, #000, #000); / Lighter background /
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; / More readable font */
 }
 
@@ -164,24 +164,24 @@ padding: 2rem; /* Increased padding */
 
 /* Chat Message Styling */
 .stChatMessage {
-background-color: #f0f2f6; /* Light background for bot messages */
+background-color: #000; /* Light background for bot messages */
 border-radius: 12px; /* Softer rounded corners */
 padding: 14px 18px; /* Slightly more padding */
 margin-bottom: 12px;
 box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05); /* Softer shadow */
 font-size: 1rem;
 line-height: 1.5; /* Improved line height for readability */
-color: #222; /* Darker text for better contrast on light background */
+color: #fff; /* Darker text for better contrast on light background */
 }
 
 /* User Message Styling */
 div.stChatMessage:nth-child(even) { /* Target even-numbered chat messages (assuming user messages alternate) */
-background-color: #e1eaf0; /* Slightly different for user messages */
+background-color: #000; /* Slightly different for user messages */
 }
 
 /* Chat Input Box */
 .stChatInput {
-background-color: #fff; /* White input background */
+background-color: #000; /* White input background */
 border-radius: 12px;
 padding: 12px 16px;
 box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.05); /* Softer shadow */
@@ -192,13 +192,13 @@ margin-top: 1rem; /* Add some space above the input */
 background-color: transparent;
 border: none;
 font-size: 1rem;
-color: #222; /* Darker text in the input */
+color: #000; /* Darker text in the input */
 }
 
 /* Title Styling */
 h1 {
 text-align: center;
-color: #222; /* Darker title color */
+color: #000; /* Darker title color */
 font-size: 2rem; /* Slightly larger title */
 font-weight: 500; /* Medium font weight */
 margin-bottom: 1.5rem;
@@ -207,7 +207,7 @@ margin-bottom: 1.5rem;
 /* Welcome Message */
 .welcome-message {
 text-align: center;
-color: #555; /* Muted welcome message color */
+color: #000; /* Muted welcome message color */
 font-size: 1.1rem;
 margin-bottom: 2.5rem;
 }
@@ -282,7 +282,7 @@ if prompt := st.chat_input(f"Ask about {GITHUB_USERNAME}..."):
                 
                 # --- Text-to-Speech ---
                 try:
-                    tts = gTTS(response, lang='en')
+                    tts = gTTS(response, lang='en', )
                     sound_file = BytesIO()
                     tts.write_to_fp(sound_file)
                     sound_file.seek(0)
