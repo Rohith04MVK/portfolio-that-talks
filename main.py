@@ -28,7 +28,6 @@ logger = logging.getLogger(__name__)
 
 # --- Helper Functions (Cached) ---
 
-@st.cache_data()  # Cache for 1 hour
 def get_github_repos(_username):
     """Fetches public repository data from GitHub."""
     repos_summary = []
@@ -55,7 +54,6 @@ def get_github_repos(_username):
         logger.error(f"Unexpected error fetching GitHub repos: {e}")
         return "An unexpected error occurred while fetching GitHub data."
 
-@st.cache_data
 def load_resume_text(_filepath):
     """Loads and extracts text from a PDF resume."""
     full_text = ""
